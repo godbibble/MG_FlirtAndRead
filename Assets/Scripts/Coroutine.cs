@@ -47,8 +47,8 @@ public class WebtoonSequenceMasked : MonoBehaviour
         }
     }
 
-    public void LoadChatroom()
+    public void LoadFlirtA()
     {
-        SceneManager.LoadScene("Chatroom");
+        SceneManager.LoadScene("FlirtA");
     }
 }
