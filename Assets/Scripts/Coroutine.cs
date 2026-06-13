@@ -5,16 +5,18 @@ using System.Collections;
 
 public class WebtoonSequenceMasked : MonoBehaviour
 {
-    // Wir ändern den Typ von Mask[] zu GameObject[]
     public GameObject[] panelMasks;
     public GameObject chatButton;
     public float delayBetweenPanels = 2.5f;
+
+    [Header("Szenen-Wechsel")]
+    // "FlirtA" ist der Standardwert. Webtoon 1 funktioniert also sofort weiter wie gewohnt!
+    public string nextSceneName = "FlirtA";
 
     void Start()
     {
         Debug.Log("1. Start-Funktion aufgerufen!");
 
-        // Schaltet jetzt das KOMPLETTE Masken-Objekt am Anfang unsichtbar
         foreach (GameObject maskObj in panelMasks)
         {
             if (maskObj != null) maskObj.SetActive(false);
@@ -33,7 +35,6 @@ public class WebtoonSequenceMasked : MonoBehaviour
         {
             if (panelMasks[i] != null)
             {
-                // Schaltet das gesamte Objekt inklusive des Bildes darunter sichtbar
                 panelMasks[i].SetActive(true);
                 Debug.Log("Schalte Panel frei: " + i);
             }
@@ -47,8 +48,10 @@ public class WebtoonSequenceMasked : MonoBehaviour
         }
     }
 
+    // Wir lassen den Funktionsnamen gleich, damit du in Szene 1 nichts neu verknüpfen musst!
     public void LoadFlirtA()
     {
-        SceneManager.LoadScene("FlirtA");
+        // Lädt jetzt dynamisch die Szene, die im Inspector steht
+        SceneManager.LoadScene(nextSceneName);
     }
 }
