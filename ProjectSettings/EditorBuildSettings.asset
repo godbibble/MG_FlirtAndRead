@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FlirtA.unity
     guid: 652f0931e761a95419811c6beae4602d
   - enabled: 1
+    path: Assets/Scenes/Profil.unity
+    guid: 647bf95e3a54d0a4a9e0bb89ebe87670
+  - enabled: 1
     path: Assets/Scenes/Chatroom.unity
     guid: 872556c4b6853774d804a921554465d6
   - enabled: 1

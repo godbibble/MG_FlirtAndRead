@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 309bbedd5d1d9774985f49f028144bd4
+guid: 0a8265f6c988f4347a06ac62dc580f11
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4511916724946447121
-    second: chatroombackground_0
+      213: 371257810862365897
+    second: FlirtA Logo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chatroombackground_0
+      name: FlirtA Logo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 1920
+        x: 118
+        y: 642
+        width: 844
+        height: 636
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11ba39e2b5c8d9e30800000000000000
-      internalID: 4511916724946447121
+      spriteID: 9cc5a801309f62500800000000000000
+      internalID: 371257810862365897
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chatroombackground_0: 4511916724946447121
+      FlirtA Logo_0: 371257810862365897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
