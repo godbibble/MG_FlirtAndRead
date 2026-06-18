@@ -59,6 +59,6 @@ public class DressUpManager : MonoBehaviour
 
     public void LoadNextWebtoon()
     {
-        SceneManager.LoadScene("Webtoon3");
+        SceneManager.LoadScene("Webtoon3.1");
     }
 }

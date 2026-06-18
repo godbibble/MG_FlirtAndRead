@@ -10,8 +10,10 @@ public class WebtoonSequenceMasked : MonoBehaviour
     public float delayBetweenPanels = 2.5f;
 
     [Header("Szenen-Wechsel")]
-    // "FlirtA" ist der Standardwert. Webtoon 1 funktioniert also sofort weiter wie gewohnt!
     public string nextSceneName = "FlirtA";
+
+    // NEU: Wenn das AN ist, wechselt die Szene automatisch nach dem letzten Panel!
+    public bool autoAdvanceAtEnd = false;
 
     void Start()
     {
@@ -41,17 +43,21 @@ public class WebtoonSequenceMasked : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenPanels);
         }
 
-        if (chatButton != null)
+        // NEU: Hier entscheiden wir anhand des Häkchens, was passiert
+        if (autoAdvanceAtEnd)
+        {
+            Debug.Log("Automatischer Szenenwechsel zu: " + nextSceneName);
+            LoadFlirtA(); // Wechselt sofort die Szene
+        }
+        else if (chatButton != null)
         {
             chatButton.SetActive(true);
             Debug.Log("3. Button sollte jetzt sichtbar sein!");
         }
     }
 
-    // Wir lassen den Funktionsnamen gleich, damit du in Szene 1 nichts neu verknüpfen musst!
     public void LoadFlirtA()
     {
-        // Lädt jetzt dynamisch die Szene, die im Inspector steht
         SceneManager.LoadScene(nextSceneName);
     }
 }

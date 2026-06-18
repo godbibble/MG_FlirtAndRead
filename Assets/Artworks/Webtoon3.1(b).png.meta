@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 29323effee2e8e647b2c7a676515eae2
+guid: 5344516e503791a47890006222594b14
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4735202000432087437
-    second: Textfeld_0
+      213: -6934484125562446921
+    second: Webtoon3.1(b)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Textfeld_0
+      name: Webtoon3.1(b)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1080
-        height: 77
+        height: 1920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37eb6886ede294eb0800000000000000
-      internalID: -4735202000432087437
+      spriteID: 7bbd343ad63c3cf90800000000000000
+      internalID: -6934484125562446921
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Textfeld_0: -4735202000432087437
+      Webtoon3.1(b)_0: -6934484125562446921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
