@@ -27,8 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/DressUp.unity
     guid: 5a41aa11727d7ad4190d55f54588e1e9
   - enabled: 1
-    path: Assets/Scenes/Webtoon3.unity
+    path: Assets/Scenes/Webtoon3.1.unity
     guid: 98d042c676ff6bf43b47192046387c18
+  - enabled: 1
+    path: Assets/Scenes/Webtoon3.2.unity
+    guid: 891f050147b30a641ad9f5e439c4c056
   - enabled: 1
     path: Assets/Scenes/IceMiniGame.unity
     guid: 8a789b1f782ba8a4581ff6803b2b2681
