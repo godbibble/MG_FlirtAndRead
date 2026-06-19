@@ -807,18 +807,16 @@ MonoBehaviour:
   - {fileID: 5597281840680775483, guid: b937aa299e79753428f82110f69607e9, type: 3}
   - {fileID: 2778663809057645964, guid: b81c49427bf6e7c4ea223753d6a2371d, type: 3}
   vladPrefab: {fileID: 4299073763759248191, guid: 4895093e657e80c489c2d354f11fdb71, type: 3}
-  spawnInterval: 0.6
+  spawnInterval: 0.5
   obstacleSpeed: 600
   gameDuration: 50
   spawnLanes:
   - -400
   - -200
-  - -100
   - 0
-  - 100
   - 200
   - 400
-  maxLaneEmptyTime: 3
+  maxLaneEmptyTime: 1
   speedVariance: 100
   gameOverPanel: {fileID: 239076582}
   winPanel: {fileID: 793403597}
