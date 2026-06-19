@@ -12,9 +12,13 @@ public class GameDirectorUI : MonoBehaviour
     public float obstacleSpeed = 500f;
     public float gameDuration = 45f;
 
-    [Header("Schwierigkeit & Positionen")]
-    public float minX = -480f;
-    public float maxX = 480f;
+    [Header("Schwierigkeit & Spuren (Lanes)")]
+    [Tooltip("Die festen X-Positionen auf der Eisbahn, auf denen Hindernisse fallen können.")]
+    public float[] spawnLanes = new float[] { -400f, -200f, 0f, 200f, 400f };
+
+    [Tooltip("Nach wie vielen Sekunden gähnender Leere eine Spur absolut erzwungen wird (Anti-Camping).")]
+    public float maxLaneEmptyTime = 3.0f;
+
     public float speedVariance = 120f;
 
     [Header("UI Endscreens")]
@@ -27,6 +31,8 @@ public class GameDirectorUI : MonoBehaviour
     private bool gameEnded = false;
     private Canvas targetCanvas;
 
+    private float[] laneEmptyTimers;
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -34,6 +40,11 @@ public class GameDirectorUI : MonoBehaviour
         if (winPanel) winPanel.SetActive(false);
 
         targetCanvas = Object.FindFirstObjectByType<Canvas>();
+
+        if (spawnLanes != null && spawnLanes.Length > 0)
+        {
+            laneEmptyTimers = new float[spawnLanes.Length];
+        }
     }
 
     void Update()
@@ -41,6 +52,14 @@ public class GameDirectorUI : MonoBehaviour
         if (gameEnded) return;
 
         gameTimer += Time.deltaTime;
+
+        if (gameTimer < (gameDuration - 3f) && laneEmptyTimers != null)
+        {
+            for (int i = 0; i < laneEmptyTimers.Length; i++)
+            {
+                laneEmptyTimers[i] += Time.deltaTime;
+            }
+        }
 
         if (gameTimer < (gameDuration - 3f))
         {
@@ -74,7 +93,30 @@ public class GameDirectorUI : MonoBehaviour
         }
         else
         {
-            spawnX = Random.Range(minX, maxX);
+            int chosenLaneIndex = 0;
+            float longestTime = 0f;
+            int longestEmptyIndex = 0;
+
+            for (int i = 0; i < laneEmptyTimers.Length; i++)
+            {
+                if (laneEmptyTimers[i] > longestTime)
+                {
+                    longestTime = laneEmptyTimers[i];
+                    longestEmptyIndex = i;
+                }
+            }
+
+            if (longestTime >= maxLaneEmptyTime)
+            {
+                chosenLaneIndex = longestEmptyIndex;
+            }
+            else
+            {
+                chosenLaneIndex = Random.Range(0, spawnLanes.Length);
+            }
+
+            spawnX = spawnLanes[chosenLaneIndex];
+            laneEmptyTimers[chosenLaneIndex] = 0f;
         }
 
         rt.anchoredPosition = new Vector2(spawnX, 1050f);
@@ -114,10 +156,9 @@ public class GameDirectorUI : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    // NEU: Diese Funktion lädt deine nächste Szene
     public void LoadEndScreen()
     {
-        Time.timeScale = 1f; // Zeit wieder aktivieren!
-        SceneManager.LoadScene("EndScreen"); // Name der Szene muss exakt stimmen
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("EndScreen");
     }
 }
