@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76931428}
-  - component: {fileID: 76931427}
+  - component: {fileID: 76931429}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -136,18 +136,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &76931427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76931426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29b198940a9e7204f98991a1291cb6ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SplashTimer
 --- !u!4 &76931428
 Transform:
   m_ObjectHideFlags: 0
@@ -163,6 +151,145 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &76931429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76931426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ae7a29ae503dd4ba778f2a294df2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlirtAIntroManager
+  logoRect: {fileID: 497427102}
+  logoPopDuration: 5
+  totalSceneTime: 6
+  nextSceneName: Profil
+  popCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.17630768
+      value: 0.0030212402
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.36832264
+      value: 1.1112502
+      inSlope: 1.8647027
+      outSlope: 1.8647027
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.65679204
+      value: 1.0341765
+      inSlope: 1.6866404
+      outSlope: 1.6866404
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.71474755
+      value: 1.0962636
+      inSlope: 1.3123112
+      outSlope: 1.3123112
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.94034624
+      value: 1.0600499
+      inSlope: 1.0862601
+      outSlope: 1.0862601
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.028456
+      value: 1.1635697
+      inSlope: 0.52927303
+      outSlope: 0.52927303
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.2455033
+      value: 1.054797
+      inSlope: 0.061690763
+      outSlope: 0.061690763
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.3785328
+      value: 1.1615998
+      inSlope: -0.09033963
+      outSlope: -0.09033963
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.5486256
+      value: 1.0010136
+      inSlope: -0.4309679
+      outSlope: -0.4309679
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.7225634
+      value: 1.1389706
+      inSlope: -0.20634678
+      outSlope: -0.20634678
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.8324744
+      value: 1.0570449
+      inSlope: -1.6504885
+      outSlope: -1.6504885
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2.048777
+      value: 1.059084
+      inSlope: -0.821694
+      outSlope: -0.821694
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2.1787262
+      value: 0.7489261
+      inSlope: 0.136138
+      outSlope: 0.136138
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &235849335
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +394,7 @@ GameObject:
   - component: {fileID: 497427104}
   - component: {fileID: 497427103}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FlirtA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,8 +416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000011921, y: 0.0000066757}
-  m_SizeDelta: {x: 253.5664, y: 208.0123}
+  m_AnchoredPosition: {x: -0.0000038147, y: 22}
+  m_SizeDelta: {x: 663.976, y: 544.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497427103
 MonoBehaviour:
@@ -305,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8773585, g: 0.44281775, b: 0.59430903, a: 0.8666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
