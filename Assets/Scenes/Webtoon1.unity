@@ -159,7 +159,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.2627451, b: 0.2627451, a: 0.627451}
+    m_NormalColor: {r: 1, g: 0.2627451, b: 0.2627451, a: 0.9019608}
     m_HighlightedColor: {r: 1, g: 0.2627451, b: 0.2627451, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -29538902981769245, guid: b60180745103b0544b0d359c8c65988a, type: 3}
+  m_Sprite: {fileID: -1254536842934572544, guid: 5cd3e35c202f2f246821191b0f9d66ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -818,6 +818,8 @@ MonoBehaviour:
   - {fileID: 837294063}
   chatButton: {fileID: 19313519}
   delayBetweenPanels: 2.5
+  nextSceneName: FlirtA
+  autoAdvanceAtEnd: 0
 --- !u!1 &827444639
 GameObject:
   m_ObjectHideFlags: 0
