@@ -6,11 +6,22 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [Header("Kleidungs-Eigenschaften")]
     public bool isWinterClothing;
 
+    [Header("Snapping (Ziel-Anker)")]
+    [Tooltip("Das unsichtbare Ziel-Objekt auf Aurelia, an das dieses Kleidungsstück snappen soll.")]
+    public RectTransform snapTarget;
+
+    [Header("Größen-Anpassung beim Anziehen")]
+    [Tooltip("Soll das Kleidungsstück seine Größe ändern, wenn es angezogen wird?")]
+    public bool changeSizeOnEquip = true;
+    [Tooltip("Die exakte UI-Größe (Width und Height), die das Item hat, wenn Aurelia es trägt.")]
+    public Vector2 equippedSize = new Vector2(200f, 300f);
+
     [HideInInspector] public bool isEquipped = false;
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector3 startPosition;
+    private Vector2 startSize; // Speichert die Größe, die es im Raum hatte
     private DressUpManager manager;
 
     void Awake()
@@ -19,7 +30,10 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
+        // Startwerte für Position UND Größe merken
         startPosition = rectTransform.anchoredPosition;
+        startSize = rectTransform.sizeDelta;
+
         manager = Object.FindFirstObjectByType<DressUpManager>();
     }
 
@@ -44,26 +58,35 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
-        if (manager != null && manager.aureliaTransform != null)
+        if (manager != null)
         {
-            // Berechnet den exakten Abstand zwischen dem Item und Aurelia im UI-Raum
-            float distance = Vector3.Distance(rectTransform.position, manager.aureliaTransform.position);
+            RectTransform target = (snapTarget != null) ? snapTarget : manager.aureliaTransform;
 
-            if (distance <= manager.dropRadius)
+            if (target != null)
             {
-                isEquipped = true; // Nah genug dran -> Angenommen!
-            }
-            else
-            {
-                ResetPosition(); // Zu weit weg -> Zurückfliegen
-            }
+                float distance = Vector3.Distance(rectTransform.position, target.position);
 
-            // Manager die neue Anzahl prüfen lassen
-            manager.RecountAndCheck();
+                if (distance <= manager.dropRadius)
+                {
+                    isEquipped = true;
+                    rectTransform.position = target.position;
+
+                    // NEU: Bild auf die perfekte Trage-Größe skalieren
+                    if (changeSizeOnEquip)
+                    {
+                        rectTransform.sizeDelta = equippedSize;
+                    }
+                }
+                else
+                {
+                    ResetPosition();
+                }
+
+                manager.RecountAndCheck();
+            }
         }
         else
         {
-            // Fallback, falls der Manager fehlt
             ResetPosition();
         }
     }
@@ -71,6 +94,8 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void ResetPosition()
     {
         rectTransform.anchoredPosition = startPosition;
+        // NEU: Beim Zurücklegen wieder auf die kleine Raum-Größe schrumpfen
+        rectTransform.sizeDelta = startSize;
         isEquipped = false;
     }
 }
